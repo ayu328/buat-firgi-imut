@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>for firgi</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  background: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 18px;
+  padding: 35px 20px;
+  margin-top: 80px;
+}
+
+button {
+  background: #eee;
+  color: #111;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 22px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+#pesan {
+  color: white;
+  margin-top: 25px;
+  line-height: 1.8;
+  min-height: 100px;
+}
+
+#angka {
+  color: #777;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+
+<h1>eh, firgi.</h1>
+<p>gue ada sesuatu buat lo.</p>
+
+<button onclick="nextMessage()">buka pesan</button>
+
+<div id="pesan"></div>
+<p id="angka"></p>
+
+<script>
+let nomor = 0;
+
+let isi = [
+  "aku mungkin nggak selalu pandai nunjukin betapa berharganya kamu buat aku, tapi kehadiran kamu punya arti yang jauh lebih besar dari yang kamu kira.",
+
+  "di antara banyak hal yang datang dan pergi dalam hidupku, aku bersyukur kamu hadir. bukan karena kamu harus selalu sempurna, tapi karena kamu jadi diri kamu sendiri.",
+
+  "aku harap kamu nggak pernah merasa harus menjadi orang lain supaya pantas disayang. kamu yang sekarang pun sudah cukup, dan kamu tetap layak mendapatkan hal-hal baik.",
+
+  "kalau suatu hari kamu capek sama dunia, istirahatlah. kamu nggak harus selalu kuat, nggak harus selalu ceria, dan nggak harus menyelesaikan semuanya sendirian.",
+
+  "terima kasih udah hadir di hidup aku, udah nemenin hari-hari aku, udah bikin hal sederhana terasa lebih menyenangkan. mungkin buat kamu biasa aja, tapi buat aku itu berarti.",
+
+  "meskipun kita belum bisa selalu ketemu, aku senang punya seseorang yang bisa aku ceritain banyak hal, seseorang yang keberadaannya bikin aku merasa nggak sendirian.",
+
+  "aku nggak tahu ke depannya bakal ada apa, tapi untuk saat ini, aku senang bisa kenal kamu, bisa sayang sama kamu, dan punya kenangan sama kamu.",
+
+  "kalau nanti kamu baca ini lagi, ingat ya... pernah ada seseorang yang tulus bersyukur karena kamu hadir di hidupnya. seseorang yang berharap kamu bahagia, bahkan di hari-hari ketika semuanya terasa berat.",
+
+  "dan orang itu adalah aku. makasih ya, firgi, udah jadi bagian dari hari-hari aku."
+];
+
+function nextMessage() {
+  document.getElementById("pesan").innerText = isi[nomor];
+  document.getElementById("angka").innerText =
+    (nomor + 1) + " / " + isi.length;
+
+  nomor++;
+
+  if (nomor >= isi.length) {
+    nomor = 0;
+  }
+}
+</script>
+</div>
+</body>
+</html>
